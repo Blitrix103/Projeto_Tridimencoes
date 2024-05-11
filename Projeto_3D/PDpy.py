@@ -1,8 +1,15 @@
-"""
-At the command line, only need to run once to install the package via pip:
+try:
+  import vpython  # Tentar importar a biblioteca VPython
+except ImportError:  # Se a importação falhar (erro de importação)
+  print("Biblioteca VPython não encontrada!")
+  
+  # Instalar a biblioteca VPython usando o PIP
+  import subprocess
+  subprocess.run(["pip", "install", "vpython"])
 
-$ pip install google-generativeai
-"""
+  # Importar a biblioteca VPython novamente após a instalação
+  import vpython
+  print("Biblioteca VPython instalada com sucesso!")
 
 import google.generativeai as genai
 
